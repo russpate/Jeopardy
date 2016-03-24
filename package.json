@@ -1,0 +1,24 @@
+{
+  "name": "jeopardy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/russpate/Jeopardy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/russpate/Jeopardy/issues"
+  },
+  "homepage": "https://github.com/russpate/Jeopardy#readme",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "serve": "^1.4.0",
+    "watchify": "^3.7.0"
+  }
+}

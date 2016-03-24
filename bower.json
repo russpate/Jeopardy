@@ -1,0 +1,22 @@
+{
+  "name": "Jeopardy",
+  "homepage": "https://github.com/russpate/Jeopardy",
+  "authors": [
+    "Russell Pate <russ@russpate.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.2",
+    "angular-route": "^1.5.2"
+  }
+}
