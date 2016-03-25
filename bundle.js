@@ -1,0 +1,1 @@
+console.error("\n/Users/russpate/Documents/TIY/Assignments/Jeopardy/services/jeopardyApp.service.js:22\n        return &q.all ([something,something])\n               ^\nParseError: Unexpected token");

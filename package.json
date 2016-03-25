@@ -4,7 +4,10 @@
   "description": "",
   "main": "app.module.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/serve",
+    "bundle": "./node_modules/.bin/browserify --entry app.module.js -o bundle.js",
+    "watch": "./node_modules/.bin/node-sass css/main.scss css/main.css -w  & ./node_modules/.bin/watchify --entry app.module.js -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +20,17 @@
   },
   "homepage": "https://github.com/russpate/Jeopardy#readme",
   "devDependencies": {
+    "bootstrap": "^3.3.6",
     "browserify": "^13.0.0",
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.2",
     "serve": "^1.4.0",
     "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.2",
+    "angular-route": "^1.5.2",
+    "font-awesome": "^4.5.0",
+    "node-sass": "^3.4.2"
   }
 }
