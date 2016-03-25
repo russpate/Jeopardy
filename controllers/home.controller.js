@@ -4,14 +4,9 @@ angular
 
     jeopardyAppService.buildUrl()
       .then(function(data){
-        $scope.categories=data[0];
-        $scope.categories
-          .then(function(data){
-            $scope.hundred = data.data.clues.filter(function(el){
-              return el.value === 100;
-            })
-            $scope.hundredPts = $scope.hundred[Math.floor(Math.random() * $scope.hundred.length)]
-          })
+        $scope.categories = data;
+        console.log("data", data)
+        window.glob5 = data
       })
-
+          
 })
