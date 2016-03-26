@@ -28,13 +28,12 @@ angular
   .module('jeopardyApp')
   .controller('HomeController', function($scope, jeopardyAppService){
 
-    jeopardyAppService.buildUrl()
+    jeopardyAppService.getData()
       .then(function(data){
         $scope.categories = data;
         console.log("data", data)
         window.glob5 = data
       })
-          
 })
 
 },{}],3:[function(require,module,exports){
@@ -42,7 +41,7 @@ angular
   .module('jeopardyApp')
   .directive('jepDr', function(){
     return {
-      templateUrl:'../templates/jepDrTmp.html',
+      templateUrl:'../templates/index.html',
       restrict:'E',
       scope:{
         clueValue:'@',
@@ -52,7 +51,7 @@ angular
         clueCategory:'@'
       },
       link: function(scope, element, attributes){
-        
+
       }
     }
 
@@ -31681,7 +31680,7 @@ angular
     }
     // var cacheEngine = $cacheFactory('jeopardyApp');
 
-    function buildUrl(){
+    function getData(){
       var urlRandomizer = [randomCat(),randomCat(),randomCat(),randomCat(),randomCat(),randomCat()]
       var promises = urlRandomizer.map(function(element) {
         return $http.get(element);
@@ -31689,27 +31688,8 @@ angular
       return $q.all(promises);
     }
 
-      // return $q.all([
-      //   urlRandomizer.map(function(data) {
-      //     var defer = $q.defer();
-      //     $http.get(base + data).then(function(el) {
-      //       defer.resolve(el)
-      //     })
-      //     return defer.promise;
-      //   })
-      // ]).then(function(data) {
-      //   console.log("KILL THE PROMISE: ", data)
-      // })
-
-
-      function allCategories(){
-        return $q.all[randomCat(),randomCat(),randomCat(),randomCat(),randomCat(),randomCat()]
-      };
-
-
     return{
-      buildUrl : buildUrl,
-      allCategories : allCategories
+      getData : getData,
     }
   })
 
