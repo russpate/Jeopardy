@@ -13,7 +13,7 @@ angular
         return $http.get(element);
       })
       return $q.all(promises);
-    }
+    } 
 
     return{
       getData : getData,

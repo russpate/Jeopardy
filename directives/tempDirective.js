@@ -2,14 +2,10 @@ angular
   .module('jeopardyApp')
   .directive('jepDr', function(){
     return {
-      templateUrl:'../templates/index.html',
+      templateUrl:'../templates/jepDrTmp.html',
       restrict:'E',
       scope:{
-        clueValue:'@',
-        clueQuestion:'@',
-        clueAnswer:'@',
-        clueTitle:'@',
-        clueCategory:'@'
+        question:'='
       },
       link: function(scope, element, attributes){
 

@@ -5,7 +5,7 @@ angular
     jeopardyAppService.getData()
       .then(function(data){
         $scope.categories = data;
-        console.log("data", data)
+        console.log($scope.categories)
         window.glob5 = data
       })
 })

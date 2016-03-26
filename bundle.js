@@ -31,7 +31,7 @@ angular
     jeopardyAppService.getData()
       .then(function(data){
         $scope.categories = data;
-        console.log("data", data)
+        console.log($scope.categories)
         window.glob5 = data
       })
 })
@@ -41,14 +41,10 @@ angular
   .module('jeopardyApp')
   .directive('jepDr', function(){
     return {
-      templateUrl:'../templates/index.html',
+      templateUrl:'../templates/jepDrTmp.html',
       restrict:'E',
       scope:{
-        clueValue:'@',
-        clueQuestion:'@',
-        clueAnswer:'@',
-        clueTitle:'@',
-        clueCategory:'@'
+        question:'='
       },
       link: function(scope, element, attributes){
 
@@ -31686,7 +31682,7 @@ angular
         return $http.get(element);
       })
       return $q.all(promises);
-    }
+    } 
 
     return{
       getData : getData,
