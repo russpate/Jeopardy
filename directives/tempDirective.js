@@ -5,10 +5,9 @@ angular
       templateUrl:'../templates/jepDrTmp.html',
       restrict:'E',
       scope:{
-        question:'='
+        questOne:'@'
       },
       link: function(scope, element, attributes){
-
       }
     }
 
