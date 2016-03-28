@@ -3,17 +3,32 @@
   padding: 0; }
 
 body {
-  background: blue;
-  color: white; }
+  color: white !important;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("../jeopardyGameBoard/images/jep_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased; }
 
 .modal {
-  color: yellow;
-  background: blue; }
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0f1277+0,603460+100&1+0,0.8+100 */
+  background: -moz-linear-gradient(-45deg, #0f1277 0%, rgba(96, 52, 96, 0.8) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #0f1277 0%, rgba(96, 52, 96, 0.8) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #0f1277 0%, rgba(96, 52, 96, 0.8) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f1277', endColorstr='#cc603460',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
   .modal input {
-    width: 100%;
-    padding: 20px;
+    padding: 2% 4%;
     border: none;
-    font-size: 2em; }
+    font-size: 2em;
+    color: #060CE9;
+    font-weight: 600; }
+    .modal input:focus {
+      outline: none;
+      box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.29); }
 
 .modal-content {
   background: none;
@@ -21,13 +36,24 @@ body {
   border: none; }
 
 .modal-dialog {
-  width: 80%; }
+  width: 80%;
+  margin: 0 auto; }
 
 .modal-header {
-  border: none; }
+  border: none;
+  margin-top: 5%; }
+  .modal-header hr {
+    width: 5%;
+    border: none;
+    background: #DAC355;
+    height: 5px;
+    margin-left: -20px; }
 
-.modal-body {
-  font-size: 3em; }
+.modal-body p {
+  color: white;
+  font-size: 6em;
+  margin-bottom: 2%;
+  font-weight: bold; }
 
 .modal-footer {
   border: none; }
@@ -35,23 +61,58 @@ body {
 .modal form button {
   padding: 2% 4%;
   border: none;
-  margin: 3% 0;
-  font-size: 1.5em; }
+  font-size: 2em;
+  font-weight: 600;
+  transition: .2s all; }
+  .modal form button:hover {
+    background: #060CE9;
+    color: #fff; }
+  .modal form button:focus {
+    outline: none !important; }
 
-.hero h1 {
-  padding: 5% 0; }
+.hero {
+  text-align: center;
+  margin: 3% 0 10%; }
+
+.score {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8c2488+0,0f1277+100&0.8+0,1+100 */
+  background: -moz-linear-gradient(-45deg, rgba(140, 36, 136, 0.8) 0%, #0f1277 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(140, 36, 136, 0.8) 0%, #0f1277 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(140, 36, 136, 0.8) 0%, #0f1277 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc8c2488', endColorstr='#0f1277',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  padding: 1%; }
+
+.category-column {
+  margin-bottom: 10%; }
+
+.category-title {
+  min-height: 100px;
+  text-align: center; }
+  .category-title h4 {
+    font-size: 1.5em;
+    vertical-align: bottom;
+    font-weight: 700;
+    text-transform: uppercase; }
 
 .value-button {
-  background: blue;
+  background: none;
   border: 1px solid white;
   border-radius: 0;
   padding: 20%;
   margin-top: 10px;
   width: 100%;
-  font-size: 18px;
+  font-size: 2em;
   font-weight: 800;
-  transition: .2s all; }
+  transition: .2s all;
+  color: white; }
   .value-button:hover {
-    color: blue;
-    background: #FFDC5D;
-    border: 1px solid #ffDC5D; }
+    color: #060CE9;
+    background: white;
+    border: 1px solid #fff; }
+  .value-button:focus {
+    color: gray;
+    outline: none !important; }

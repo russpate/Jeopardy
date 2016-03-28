@@ -1,7 +1,7 @@
 angular
   .module('jeopardyApp')
-  .controller('HomeController', function($scope, jeopardyAppService){
-
+  .controller('HomeController', function($rootScope, $scope, jeopardyAppService){
+    $rootScope.score=0
     jeopardyAppService.getData()
       .then(function(data){
         $scope.categories = data;
@@ -19,5 +19,6 @@ angular
              el.data.clues[i].value = 200 * (i + 1);
            }
       };
+
 
 })

@@ -1,19 +1,47 @@
-.hero h1 {
-  padding: 5% 0;
+.hero {
+  text-align: center;
+  margin: 3% 0 10%;
+}
+.score {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8c2488+0,0f1277+100&0.8+0,1+100 */
+background: -moz-linear-gradient(-45deg,  rgba(140,36,136,0.8) 0%, rgba(15,18,119,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  rgba(140,36,136,0.8) 0%,rgba(15,18,119,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  rgba(140,36,136,0.8) 0%,rgba(15,18,119,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc8c2488', endColorstr='#0f1277',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  padding: 1%;
+}
+.category-column {
+  margin-bottom: 10%;
+}
+.category-title {
+  min-height: 100px;
+  text-align:center;
+  h4{
+    font-size: 1.5em;
+    vertical-align: bottom;
+    font-weight: 700;
+    text-transform:uppercase;
+  }
 }
 .value-button {
-  background: blue;
+  background: none;
   border: 1px solid white;
   border-radius: 0;
   padding: 20%;
   margin-top: 10px;
   width: 100%;
-  font-size: 18px;
+  font-size: 2em;
   font-weight: 800;
   transition: .2s all;
+  color:white;
   &:hover {
-    color: blue;
-    background: #FFDC5D;
-    border: 1px solid #ffDC5D;
+    color: $jp-blue;
+    background: white;
+    border: 1px solid #fff;
+  }
+  &:focus{
+    color:gray;
+    outline:none !important;
   }
 }

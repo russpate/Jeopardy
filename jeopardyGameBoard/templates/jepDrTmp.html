@@ -1,27 +1,27 @@
 <!-- <p>{{cats.clues}}</p> -->
-<div class="col-md-2">
-  <div class="category-title"><h4>{{cats.title}}</h4></div>
+<div class="col-md-2 category-column">
+  <div class="category-title col-md-12"><h4>{{cats.title}}</h4></div>
 
   <div ng-repeat="questions in cats.clues | limitTo:5:0 | filter:magic | filter:'' | filter:clueMagic" ng-if="questions.question" ng-if="questions.value">
       <div id="{{questions.id}}" class="modal fade" tabindex="-1" aria-labelledby="{{questions.id}}" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-              <h4 class="modal-title" id="{{questions.id}}">${{questions.value}} <strong>{{cats.title}}</h4>
+              <h4 class="modal-title" id="{{questions.id}}">{{cats.title}} for ${{questions.value}}</h4>
+              <hr />
             </div>
             <div class="modal-body">
               <p>{{questions.question}}</p>
             </div>
             <div class="modal-footer {{questions.id}}">
-              <form role="form" class="" ng-submit="">
-                <input type="text" name="name" value="" placeholder="answer">
-                <button ng-click="" type="submit" name="button" value="submit">submit</button>
+              <form role="form" class="" ng-submit="addScore(userInput, questions.answer, questions.value)">
+                <input type="text" name="name" value="" ng-model="userInput" placeholder="answer" class="col-sm-9 col-xs-12">
+                <button ng-click="hideModal(questions.id)" type="submit" name="button" value="submit" class="col-sm-3 col-xs-12">submit</button>
               </form>
             </div>
           </div>
         </div>
       </div>
-    <button type="button" class="{{questions.id}} btn value-button" data-toggle="modal" data-target="#{{questions.id}}">{{questions.value}}</button>
+        <button type="button" class="{{questions.id}} btn value-button" data-toggle="modal" data-target="#{{questions.id}}">$ {{questions.value}}</button>
   </div>
 </div>

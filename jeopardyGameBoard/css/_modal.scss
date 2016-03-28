@@ -1,11 +1,22 @@
 .modal {
-  color: yellow;
-  background:blue;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0f1277+0,603460+100&1+0,0.8+100 */
+background: -moz-linear-gradient(-45deg,  rgba(15,18,119,1) 0%, rgba(96,52,96,0.8) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  rgba(15,18,119,1) 0%,rgba(96,52,96,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  rgba(15,18,119,1) 0%,rgba(96,52,96,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f1277', endColorstr='#cc603460',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
   input {
-    width: 100%;
-    padding: 20px;
+    padding: 2% 4%;
     border: none;
     font-size: 2em;
+    color:$jp-blue;
+    font-weight:600;
+    // border-bottom-left-radius: 3px;
+    // border-top-left-radius: 3px;
+    &:focus {
+      outline: none;
+      box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.29);
+    }
   }
 }
 .modal-content {
@@ -15,12 +26,26 @@
 }
 .modal-dialog {
   width: 80%;
+  margin:0 auto;
 }
 .modal-header {
-  border: 1px solid blue;
+  border: none;
+  margin-top: 5%;
+  hr {
+    width: 5%;
+    border: none;
+    background: $jp-yellow;
+    height: 5px;
+    margin-left: -20px;
+  }
 }
 .modal-body {
-    font-size: 3em;
+  p{
+    color:white;
+    font-size: 6em;
+    margin-bottom: 2%;
+    font-weight: bold;
+  }
 }
 .modal-footer {
   border: none;
@@ -28,6 +53,16 @@
 .modal form button {
     padding: 2% 4%;
     border: none;
-    margin: 3% 0;
-    font-size: 1.5em;
+    font-size: 2em;
+    font-weight:600;
+    // border-bottom-right-radius: 3px;
+    // border-top-right-radius: 3px;
+    transition:.2s all;
+    &:hover{
+      background:$jp-blue;
+      color:#fff;
+    }
+    &:focus{
+      outline:none !important;
+    }
 }

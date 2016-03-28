@@ -1,8 +1,15 @@
+$jp-blue: #060CE9;
+$jp-yellow: #DAC355;
+
 *{
   margin:0;
   padding:0;
 }
 body{
-  background:blue;
-  color:white;
+  color:white !important;
+  font-family: 'Roboto', sans-serif;
+  background-image:url("../jeopardyGameBoard/images/jep_bg.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  -webkit-font-smoothing: antialiased;
 }

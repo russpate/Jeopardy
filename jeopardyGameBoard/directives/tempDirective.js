@@ -7,7 +7,17 @@ angular
       scope:{
         cats:'='
       },
-      link: function(scope, element, attributes){
+      controller: function($rootScope, $scope){
+        $scope.addScore = function(input, answer, value){
+          if(input === answer){
+            $rootScope.score += value
+          }else{
+            $rootScope.score -= value
+          };
+        }
+        $scope.hideModal = function (id) {
+          $('#' + id).modal('hide')
+        }
       }
     }
 

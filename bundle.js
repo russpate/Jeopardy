@@ -22,8 +22,8 @@ angular
 },{"./jeopardyGameBoard":4,"angular":10,"angular-route":8}],2:[function(require,module,exports){
 angular
   .module('jeopardyApp')
-  .controller('HomeController', function($scope, jeopardyAppService){
-
+  .controller('HomeController', function($rootScope, $scope, jeopardyAppService){
+    $rootScope.score=0
     jeopardyAppService.getData()
       .then(function(data){
         $scope.categories = data;
@@ -42,6 +42,7 @@ angular
            }
       };
 
+
 })
 
 },{}],3:[function(require,module,exports){
@@ -54,7 +55,17 @@ angular
       scope:{
         cats:'='
       },
-      link: function(scope, element, attributes){
+      controller: function($rootScope, $scope){
+        $scope.addScore = function(input, answer, value){
+          if(input === answer){
+            $rootScope.score += value
+          }else{
+            $rootScope.score -= value
+          };
+        }
+        $scope.hideModal = function (id) {
+          $('#' + id).modal('hide')
+        }
       }
     }
 
