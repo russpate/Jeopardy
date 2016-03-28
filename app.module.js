@@ -2,15 +2,17 @@ var angular = require('angular');
 var angularRoute = require('angular-route');
 
 angular
-  .module('jeopardyApp',['ngRoute'])
+  .module('jeopardyApp',[
+    'ngRoute',
+    'jeopardyGameBoard'
+  ])
   .config(function($routeProvider){
     $routeProvider
       .when('/',{
-        templateUrl: 'templates/index.html',
-        controller: 'HomeController'
+        templateUrl: 'main.html'
       })
       .when('/404',{
-        templateUrl: 'templates/404.html',
+        template: '<h1>404</h1>',
         controller: 'HomeController'
       })
       .otherwise({
@@ -18,6 +20,4 @@ angular
       })
   })
 
-  require('./controllers/home.controller');
-  require('./services/jeopardyApp.service');
-  require('./directives/tempDirective');
+  require('./jeopardyGameBoard');
