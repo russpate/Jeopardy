@@ -3,9 +3,9 @@ angular
   .directive('jepDr', function(){
     return {
       templateUrl:'../templates/jepDrTmp.html',
-      restrict:'E',
+      restrict:'EA',
       scope:{
-        questOne:'@'
+        cats:'='
       },
       link: function(scope, element, attributes){
       }
