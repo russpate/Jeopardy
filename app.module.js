@@ -4,13 +4,9 @@ var angularRoute = require('angular-route');
 angular
   .module('jeopardyApp',[
     'ngRoute',
-    'jeopardyGameBoard'
-  ])
+    'jeopardyGameBoard'])
   .config(function($routeProvider){
     $routeProvider
-      .when('/',{
-        templateUrl: 'main.html'
-      })
       .when('/404',{
         template: '<h1>404</h1>',
         controller: 'HomeController'
