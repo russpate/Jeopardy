@@ -7,4 +7,51 @@ body {
   color: white; }
 
 .modal {
-  color: black; }
+  color: yellow;
+  background: blue; }
+  .modal input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    font-size: 2em; }
+
+.modal-content {
+  background: none;
+  box-shadow: none;
+  border: none; }
+
+.modal-dialog {
+  width: 80%; }
+
+.modal-header {
+  border: none; }
+
+.modal-body {
+  font-size: 3em; }
+
+.modal-footer {
+  border: none; }
+
+.modal form button {
+  padding: 2% 4%;
+  border: none;
+  margin: 3% 0;
+  font-size: 1.5em; }
+
+.hero h1 {
+  padding: 5% 0; }
+
+.value-button {
+  background: blue;
+  border: 1px solid white;
+  border-radius: 0;
+  padding: 20%;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 800;
+  transition: .2s all; }
+  .value-button:hover {
+    color: blue;
+    background: #FFDC5D;
+    border: 1px solid #ffDC5D; }

@@ -1,0 +1,19 @@
+.hero h1 {
+  padding: 5% 0;
+}
+.value-button {
+  background: blue;
+  border: 1px solid white;
+  border-radius: 0;
+  padding: 20%;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 800;
+  transition: .2s all;
+  &:hover {
+    color: blue;
+    background: #FFDC5D;
+    border: 1px solid #ffDC5D;
+  }
+}

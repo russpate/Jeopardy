@@ -1,6 +1,6 @@
 <!-- <p>{{cats.clues}}</p> -->
 <div class="col-md-2">
-  <h1>{{cats.title}}</h1>
+  <div class="category-title"><h4>{{cats.title}}</h4></div>
 
   <div ng-repeat="questions in cats.clues | limitTo:5:0 | filter:magic | filter:'' | filter:clueMagic" ng-if="questions.question" ng-if="questions.value">
       <div id="{{questions.id}}" class="modal fade" tabindex="-1" aria-labelledby="{{questions.id}}" role="dialog">
@@ -8,7 +8,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-              <h4 class="modal-title" id="{{questions.id}}">${{questions.value}}</h4>
+              <h4 class="modal-title" id="{{questions.id}}">${{questions.value}} <strong>{{cats.title}}</h4>
             </div>
             <div class="modal-body">
               <p>{{questions.question}}</p>
@@ -22,6 +22,6 @@
           </div>
         </div>
       </div>
-    <button type="button" class="{{questions.id}} btn btn-primary" data-toggle="modal" data-target="#{{questions.id}}">{{questions.value}}</button>
+    <button type="button" class="{{questions.id}} btn value-button" data-toggle="modal" data-target="#{{questions.id}}">{{questions.value}}</button>
   </div>
 </div>
