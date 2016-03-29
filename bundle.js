@@ -9,7 +9,7 @@ angular
   .config(function($routeProvider){
     $routeProvider
       .when('/',{
-        templateUrl: './jeopardyGameBoard/templates/index.html',
+        templateUrl: '/jeopardyGameBoard/templates/index.html',
         controller: 'HomeController'
       })
       .when('/404',{
@@ -101,7 +101,7 @@ angular
   .config(function($routeProvider){
     $routeProvider
       .when('/',{
-        templateUrl: '../jeopardyGameBoard/templates/index.html',
+        templateUrl: 'templates/index.html',
         controller: 'HomeController'
       })
   })
