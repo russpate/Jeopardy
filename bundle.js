@@ -8,6 +8,10 @@ angular
     'jeopardyGameBoard'])
   .config(function($routeProvider){
     $routeProvider
+      .when('/',{
+        templateUrl: './jeopardyGameBoard/templates/index.html',
+        controller: 'HomeController'
+      })
       .when('/404',{
         template: '<h1>404</h1>',
         controller: 'HomeController'
