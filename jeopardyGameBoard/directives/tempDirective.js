@@ -23,11 +23,12 @@ angular
         //hideModal closes the modal after the user has submitted their answer
         $scope.hideModal = function (id) {
           $('#' + id).modal('hide')
+          $("." + id).prop('disabled', true);
         }
-        // got example from frank / hanks demo in class
-        $scope.disableButton = function(id){
-          $("div." + id).toggle();
-        }
+        // // got example from frank / hanks demo in class
+        // $scope.disableButton = function(id){
+        //
+        // }
       }
     }
 
