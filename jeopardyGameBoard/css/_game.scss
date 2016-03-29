@@ -1,15 +1,18 @@
 .hero {
   text-align: center;
-  margin: 3% 0 10%;
+  margin: 5% 0;
+  img {
+    width: 225px;
+  }
 }
 .score {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8c2488+0,0f1277+100&0.8+0,1+100 */
-background: -moz-linear-gradient(-45deg,  rgba(140,36,136,0.8) 0%, rgba(15,18,119,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  rgba(140,36,136,0.8) 0%,rgba(15,18,119,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg,  rgba(140,36,136,0.8) 0%,rgba(15,18,119,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc8c2488', endColorstr='#0f1277',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+  background: white;
+  color: purple;
+  font-size: 16px;
+  text-transform: uppercase;
   padding: 1%;
+  position: fixed;
+  z-index: 1000;
 }
 .category-column {
   margin-bottom: 10%;
@@ -41,7 +44,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc8c2488', e
     border: 1px solid #fff;
   }
   &:focus{
-    color:gray;
+    color:$jp-yellow;
     outline:none !important;
   }
 }
