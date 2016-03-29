@@ -12,7 +12,7 @@ angular
         controller: 'HomeController'
       })
       .when('/404',{
-        template: '<h1>404</h1>',
+        template: '<h1>404, This Page Cannot Be Found</h1>',
         controller: 'HomeController'
       })
       .otherwise({

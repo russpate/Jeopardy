@@ -13,7 +13,7 @@ angular
         controller: 'HomeController'
       })
       .when('/404',{
-        template: '<h1>404</h1>',
+        template: '<h1>404, This Page Cannot Be Found</h1>',
         controller: 'HomeController'
       })
       .otherwise({
@@ -101,7 +101,7 @@ angular
   .config(function($routeProvider){
     $routeProvider
       .when('/',{
-        templateUrl: './templates/index.html',
+        templateUrl: 'jeopardyGameBoard/templates/index.html',
         controller: 'HomeController'
       })
   })
