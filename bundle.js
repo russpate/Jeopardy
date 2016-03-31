@@ -20,32 +20,21 @@ angular
   require('./jeopardyGameBoard');
 
 },{"./jeopardyGameBoard":4,"angular":10,"angular-route":8}],2:[function(require,module,exports){
-var _= require('underscore')
-
 angular
   .module('jeopardyApp')
-  .controller('HomeController', function($rootScope, $scope, jeopardyAppService){
+  .controller('HomeController', HomeCtrl)
+
+  HomeCtrl.$inject = ['$rootScope', '$scope', 'jeopardyAppService']
+  function HomeCtrl($rootScope, $scope, jeopardyAppService){
+    var vm = this
     $rootScope.score=0
     jeopardyAppService.getData()
       .then(function(data){
-        $scope.categories = data;
-        console.log($scope.categories)
-        window.glob5 = data
-
-        $scope.categories.forEach(function(el){
-          //Andrew helped me with this
-          if(el.data.clues_count > 5){
-            el.data.clues=_.first(_.shuffle(el.data.clues),5)
-          }
-          for(var i=0; i < 5; i++){
-            el.data.clues[i].value = 200 * (i + 1);
-          }
-          });
+        vm.categories = data;
       })
     }
-)
 
-},{"underscore":11}],3:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 angular
   .module('jeopardyApp')
   .directive('jepDr', function(){
@@ -62,7 +51,7 @@ angular
         // while in game play
         $scope.addScore = function(input, answer, value){
           //strip out html from answer https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/
-          if(input === answer.toLowerCase().replace(/(<([^>]+)>)/ig,"")){
+          if(input === answer.toLowerCase().replace(/(<([^>]+)>)|\\\//ig,"")){
             $rootScope.score += value
           }else{
             $rootScope.score -= value
@@ -98,34 +87,49 @@ angular
     $routeProvider
       .when('/',{
         templateUrl: '../jeopardyGameBoard/templates/index.html',
-        controller: 'HomeController'
+        controller: 'HomeController as HomeCtrl'
       })
   })
 
 },{"angular":10,"angular-route":8}],6:[function(require,module,exports){
+var _= require('underscore');
+
 angular
   .module('jeopardyApp')
-  .service('jeopardyAppService', function($http,$q){
+  .service('jeopardyAppService', JappService);
+
+  JappService.$inject = ['$http','$q']
+  function JappService($http,$q){
     var base = 'http://jservice.io/api/';
     function randomCat() {
-      return  base + 'category?id=' + Math.floor(Math.random()*1600);
+      return  base + 'category?id=' + Math.floor(Math.random()*18418);
     }
     // var cacheEngine = $cacheFactory('jeopardyApp');
-
     function getData(){
       var urlRandomizer = [randomCat(),randomCat(),randomCat(),randomCat(),randomCat(),randomCat()]
       var promises = urlRandomizer.map(function(element) {
         return $http.get(element);
       })
-      return $q.all(promises);
-    } 
 
+      return $q.all(promises).then(function(categories){
+        categories.forEach(function(el){
+          //Andrew helped me with this
+          if(el.data.clues_count > 5){
+            el.data.clues=_.first(_.shuffle(el.data.clues),5)
+          }
+          for(var i=0; i < 5; i++){
+            el.data.clues[i].value = 200 * (i + 1);
+            }
+        });
+        return categories;
+      })
+    }
     return{
       getData : getData,
     }
-  })
+  }
 
-},{}],7:[function(require,module,exports){
+},{"underscore":11}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.3
  * (c) 2010-2016 Google, Inc. http://angularjs.org

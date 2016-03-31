@@ -14,7 +14,7 @@ angular
         // while in game play
         $scope.addScore = function(input, answer, value){
           //strip out html from answer https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/
-          if(input === answer.toLowerCase().replace(/(<([^>]+)>)/ig,"")){
+          if(input === answer.toLowerCase().replace(/(<([^>]+)>)|\\\//ig,"")){
             $rootScope.score += value
           }else{
             $rootScope.score -= value
