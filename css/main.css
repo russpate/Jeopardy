@@ -18,7 +18,8 @@ body {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a31a9a', endColorstr='#2e00d8',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  height: 100vh; }
 
 .modal {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0f1277+0,603460+100&1+0,0.8+100 */
